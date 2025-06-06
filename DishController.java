@@ -95,7 +95,7 @@ public class DishController {
     protected void updateDish() {
         FoodItem selected = dishTable.getSelectionModel().getSelectedItem();
         if (selected == null) {
-            showAlert("তথ্য নেই", "আপডেট করার জন্য একটি আইটেম নির্বাচন করুন"); // "No item selected"
+            showAlert("তথ্য নেই", "আপডেট করার জন্য একটি আইটেম নির্বাচন করুন"); 
             return;
         }
 
@@ -110,7 +110,7 @@ public class DishController {
             selected.setDescription(descriptionField.getText().trim());
             dishTable.refresh();
         } catch (SQLException e) {
-            showAlert("ত্রুটি", "খাবার আপডেট করা যায়নি: " + e.getMessage()); // "Could not update dish"
+            showAlert("ত্রুটি", "খাবার আপডেট করা যায়নি: " + e.getMessage()); 
         }
 
         clearFields();
@@ -120,7 +120,7 @@ public class DishController {
     protected void deleteDish() {
         FoodItem selected = dishTable.getSelectionModel().getSelectedItem();
         if (selected == null) {
-            showAlert("তথ্য নেই", "মুছে ফেলার জন্য একটি আইটেম নির্বাচন করুন"); // "No item selected"
+            showAlert("তথ্য নেই", "মুছে ফেলার জন্য একটি আইটেম নির্বাচন করুন");
             return;
         }
 
@@ -131,7 +131,7 @@ public class DishController {
 
             dishes.remove(selected);
         } catch (SQLException e) {
-            showAlert("ত্রুটি", "খাবার মুছে ফেলা যায়নি: " + e.getMessage()); // "Could not delete dish"
+            showAlert("ত্রুটি", "খাবার মুছে ফেলা যায়নি: " + e.getMessage());
         }
 
         clearFields();
